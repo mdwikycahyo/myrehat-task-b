@@ -57,6 +57,25 @@ const WRAPPING_QUOTES: [string, string][] = [
 	["‘", "’"],
 ];
 
+/** True when stripping the outer quotes leaves no stray quote behind. */
+function isWrapperInner(inner: string, open: string, close: string): boolean {
+	if (open !== close) {
+		let depth = 0;
+		for (const ch of inner) {
+			if (ch === open) depth++;
+			else if (ch === close && --depth < 0) return false;
+		}
+		return depth === 0;
+	}
+	const marks = [...inner].filter((ch) => ch === open).length;
+	if (marks === 0) return true;
+	if (marks % 2 !== 0) return false;
+	// Straight quotes: the first inner quote must look like an opening one,
+	// otherwise the outer pair belongs to two separate quoted phrases.
+	const first = inner.indexOf(open);
+	return first === 0 || /\s/.test(inner[first - 1] ?? "");
+}
+
 function stripOneWrapper(text: string): string {
 	if (text.length >= 6 && text.startsWith("```") && text.endsWith("```")) {
 		const inner = text.slice(3, -3);
@@ -65,8 +84,10 @@ function stripOneWrapper(text: string): string {
 		return (newline === -1 ? inner : inner.slice(newline + 1)).trim();
 	}
 	for (const [open, close] of WRAPPING_QUOTES) {
-		if (text.length >= 2 && text.startsWith(open) && text.endsWith(close))
-			return text.slice(1, -1).trim();
+		if (text.length >= 2 && text.startsWith(open) && text.endsWith(close)) {
+			const inner = text.slice(1, -1);
+			if (isWrapperInner(inner, open, close)) return inner.trim();
+		}
 	}
 	return text;
 }

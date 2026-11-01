@@ -34,7 +34,8 @@
     "@types/bun": "catalog:",
     "turbo": "^2.11.7",
     "typescript": "catalog:",
-    "varlock": "catalog:"
+    "varlock": "catalog:",
+    "vitest": "^5.0.5"
   },
   "packageManager": "pnpm@12.16.1"
 }

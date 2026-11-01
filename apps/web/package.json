@@ -13,6 +13,7 @@
 		"@ai-sdk/react": "^4.0.96",
 		"@myrehat-task-b/api": "workspace:*",
 		"@myrehat-task-b/ui": "workspace:*",
+		"@openrouter/ai-sdk-provider": "^3.1.0",
 		"@orpc/client": "catalog:",
 		"@orpc/server": "catalog:",
 		"@orpc/tanstack-query": "^1.15.6",

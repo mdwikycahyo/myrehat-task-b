@@ -1,0 +1,7 @@
+{
+	"extends": "@myrehat-task-b/config/tsconfig.base.json",
+	"compilerOptions": {
+		"noEmit": true
+	},
+	"include": ["**/*.ts"]
+}

@@ -245,6 +245,12 @@ importers:
       '@types/bun':
         specifier: 'catalog:'
         version: 1.4.4
+      ai:
+        specifier: 'catalog:'
+        version: 7.0.159(zod@4.6.7)
+      ai-sdk-provider-opencode-sdk:
+        specifier: ^5
+        version: 5.0.1(effect@4.0.0-rc.112)(solid-js@1.9.18)(zod@4.6.7)
       turbo:
         specifier: ^2.11.7
         version: 2.11.10
@@ -295,7 +301,7 @@ importers:
         version: 7.0.159(zod@4.6.7)
       better-auth:
         specifier: 'catalog:'
-        version: 1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)))
+        version: 1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)))
       elysia:
         specifier: ^1.4.30
         version: 1.4.30(@sinclair/typebox@0.34.52)(@types/bun@1.4.4)(exact-mirror@1.2.6)(file-type@22.3.0)(openapi-types@12.1.3)(typescript@6.0.3)
@@ -362,7 +368,7 @@ importers:
         version: 1.0.0
       better-auth:
         specifier: 'catalog:'
-        version: 1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)))
+        version: 1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)))
       lucide-react:
         specifier: 'catalog:'
         version: 1.65.0(@types/react@19.3.0)(react@19.3.1)
@@ -454,16 +460,16 @@ importers:
         version: 1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5)
       '@better-auth/drizzle-adapter':
         specifier: 1.7.12
-        version: 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))
+        version: 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))
       '@myrehat-task-b/db':
         specifier: workspace:*
         version: link:../db
       better-auth:
         specifier: 'catalog:'
-        version: 1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)))
+        version: 1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0)))
       drizzle-orm:
         specifier: 'catalog:'
-        version: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)
+        version: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)
       zod:
         specifier: 'catalog:'
         version: 4.6.7
@@ -481,7 +487,7 @@ importers:
     dependencies:
       drizzle-orm:
         specifier: 'catalog:'
-        version: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)
+        version: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)
       pg:
         specifier: ^8.23.0
         version: 8.23.1
@@ -497,7 +503,7 @@ importers:
         version: 8.23.1
       drizzle-kit:
         specifier: 1.0.0-rc.5
-        version: 1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))
+        version: 1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -1152,6 +1158,36 @@ packages:
     resolution: {integrity: sha512-rgR9yxSaAJ+bcsi/XroT/S2AfPiIWloXAnrdfYSCms9ivVju0ishu/wW0J21Ho6+ZOR1r7RyeRbjiRuF87ix5Q==}
     engines: {node: '>=20'}
 
+  '@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.4':
+    resolution: {integrity: sha512-LCkGo6JDfaBhgST7UpPWgNgLINpcpabaHfyz5OBx75nUYxBsaEPxjnyNjWpeb/xBup/682QnBfRBy2/LvPutZQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@msgpackr-extract/msgpackr-extract-darwin-x64@3.0.4':
+    resolution: {integrity: sha512-zExlW9zUJKZH/tOtVMttwjKa4Xm/3KcNjnE3dPN92uCktwavMxpgCA3MoJK/DOnTWsQgo224OaST27/mPNAf+w==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.4':
+    resolution: {integrity: sha512-dgX0P/9wGPJeHFBG+ZmhgE6bmtMt7NP5CRBGyyktpopdk/mW4POnrpQsSLtKI1dwpc+pPLuXHDh6vvskyQE/sw==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm@3.0.4':
+    resolution: {integrity: sha512-Tg3yX65f5GbtXLkrYEHE5oibZG9epyYWas7FogTTEJeDEF9JlXJzKgXaNhT3UXlTOeA+AfZpYZYZ0uPj7Cfquw==}
+    cpu: [arm]
+    os: [linux]
+
+  '@msgpackr-extract/msgpackr-extract-linux-x64@3.0.4':
+    resolution: {integrity: sha512-8TNXMEjJc3QEy7R/x1INhgiU+XakDAFUzBhaz7+Rbrs8NH5UQeHQxxmzsSBJGyV6I1jW79undiQm8tOI+D+8FQ==}
+    cpu: [x64]
+    os: [linux]
+
+  '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.4':
+    resolution: {integrity: sha512-CmCXPQrkbwExx3j946/PtHWHbYJiCRBRDl4BlkRQcJB/YOwQxJRTpoo7aTsortjgoJ1x7opzTSxn7C+ASSLVjQ==}
+    cpu: [x64]
+    os: [win32]
+
   '@next/swc-darwin-arm64@16.4.3':
     resolution: {integrity: sha512-4yq5EXBt+VDtAZwTyfijaFp5D2C5oz3Ikw5a2kiX2K9nw72vrZX2q5UuAlkPtUMO1tQz6JTKpaKWjS7OOefTDQ==}
     engines: {node: '>= 10'}
@@ -1223,6 +1259,23 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@opencode/client@2.0.24':
+    resolution: {integrity: sha512-FSxVU0BP0CczAMSq0hcVHlv8DrWAR/0wTiqq8v1L6lTHaznWTVyZyOKw+UiV18re/Ng7IjS4SnNTh/pgu5jZYg==}
+    peerDependencies:
+      effect: 4.0.0-rc.112
+      solid-js: '>=1.9.0'
+    peerDependenciesMeta:
+      effect:
+        optional: true
+      solid-js:
+        optional: true
+
+  '@opencode/protocol@2.0.24':
+    resolution: {integrity: sha512-0fSYiSLKjh5DIHStL0zL9ofyYiprWVVL/1z06BhtDbD+8FS21rwnCfX3wEuyEIDQ7knS3AigIeiFFDglMXdMxg==}
+
+  '@opencode/schema@2.0.24':
+    resolution: {integrity: sha512-GpusTRzI4wZl0o+ntBS4r0NDdHcF6nZu5RIeNJg/In3GUBdCtih+rQMkS9XUt5RuSHpWrwaex5PAtdSErZJQmg==}
 
   '@openrouter/ai-sdk-provider@3.1.0':
     resolution: {integrity: sha512-BQy1TA9fKrh47s9ivsO6FY5QimN7GUF0i8Qon3pkxQclEgShso0dClpcWn8OIyPLEZZPFaFKgI8TW4S/O0p0Dw==}
@@ -1871,6 +1924,12 @@ packages:
   '@yuku-toolchain/types@0.19.0':
     resolution: {integrity: sha512-tFkNbsP4WXX9UMUC5syJGdK9dPMLK0PPaIuXCcCYH75sZ8MrebfBZ2XvCILRTw8AgLivSSCfDa4R67iYBDa4Kg==}
 
+  ai-sdk-provider-opencode-sdk@5.0.1:
+    resolution: {integrity: sha512-BCikRzDoPScCO47OD3/4P7cSilhB6FIQc7NV+tpSHoi5CGahIexoN7akICTbzTU+y8DHeeiRkAM5DQy1/ChUGA==}
+    engines: {node: '>=22'}
+    peerDependencies:
+      zod: ^3.25.76 || ^4.1.8
+
   ai@7.0.159:
     resolution: {integrity: sha512-4e/BwDoKJlMNYZaqERcTbGte+4TwroN9qKnCprog/XVfD9InzVPlhCviDhN452JIRrRsYg9BT0WsQ2C3Ds2mVQ==}
     engines: {node: '>=22'}
@@ -2356,6 +2415,9 @@ packages:
       oxc-resolver:
         optional: true
 
+  effect@4.0.0-rc.112:
+    resolution: {integrity: sha512-wXxwuh1Ywnv4cPRM3Wfa0vDwuOHnZ1TsTgHJkG9XgzND6inhBH9n1vBxhg3iIXOia/OrpmvVmd3lrD4vq6bF3A==}
+
   electron-to-chromium@1.5.470:
     resolution: {integrity: sha512-omO9daK1eC5K0AFhIYtCcKsxm1erRC/SNr9I1RtPZrgdcR5KdAkPT8jtaoPgNhMsUf/zcslmDev4T7KqiDEa9w==}
 
@@ -2445,6 +2507,10 @@ packages:
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
+
+  fast-check@4.10.2:
+    resolution: {integrity: sha512-iK2f+YrcmoeGqk6fA0ea2bptcu/itMIm4NfEozq6N25+aG6h7s5HZbB/k1aV7b5w5sFLMCbbtRUsTVR+BgC3xw==}
+    engines: {node: '>=12.17.0'}
 
   fast-decode-uri-component@1.0.1:
     resolution: {integrity: sha512-WKgKWg5eUxvRZGwW8FvfbaH7AXSh2cL+3j5fMGzUMCxWBJ3dV3a7Wz8y2f/uQ0e3B6WmodD3oS54jTQ9HVTIIg==}
@@ -3092,6 +3158,13 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
+  msgpackr-extract@3.0.4:
+    resolution: {integrity: sha512-4kmO/MdyUIkLIvTPr8VHLil4AtoKIoniWPIEk5+CDy0xnWC84azhSFmuJ7PxZdsYtiP5kEeQsORAVIeMgxT+Hw==}
+    hasBin: true
+
+  msgpackr@2.1.3:
+    resolution: {integrity: sha512-C8pQ8SJjwH9C9JiCe5asXWvJC3melOxMuBj7vpTY95096ay6r1wPXG0XN56wMaRpzRPE3hdf4ufukia/j+beKQ==}
+
   nanoid@3.3.20:
     resolution: {integrity: sha512-uKdg2G3GNCKQn9byYOpxbGqrT2fGO5KRt5J/8b3pok8rT6qxGWF6hxMyJiEYtAf+FVyYuD9hRaDqX5uPFYJ4ZQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -3127,6 +3200,10 @@ packages:
         optional: true
       sass:
         optional: true
+
+  node-gyp-build-optional-packages@5.2.2:
+    resolution: {integrity: sha512-s+w+rBWnpTMwSFbaE0UXsRlg7hU4FjekKU4eyAih5T8nJuNZT1nNsskXpxmeqSK9UzkBl6UgRlnKc8hz8IEqOw==}
+    hasBin: true
 
   node-releases@2.0.62:
     resolution: {integrity: sha512-A0Eq+qVDQI97IbAD6g/HriIuv256el9N8EwF4+xqJ49pwrdRYpdCSmLk0sO4I3fnS6hpYE5v22B73Bk+WArEoQ==}
@@ -3303,6 +3380,9 @@ packages:
 
   property-information@7.2.0:
     resolution: {integrity: sha512-IAtzIB6sUiWaJYrX9smp3V46pBGbBeLFRGdh25kg1334VcBlD8HzhPeNIWQH9zhGmo2itIe25EHt9dQP7G5hmg==}
+
+  pure-rand@8.4.2:
+    resolution: {integrity: sha512-vvuOGgcuPJAirlHvuQw1TrOiw7ptaIXXmIbNuiNOY6lNGJJH49PQ1Kj4nd783nPdQhQdicgOjVI2yI/9BD6/Ng==}
 
   quansync@1.0.0:
     resolution: {integrity: sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==}
@@ -4220,12 +4300,12 @@ snapshots:
       nanostores: 1.5.5
       zod: 4.6.7
 
-  '@better-auth/drizzle-adapter@1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))':
+  '@better-auth/drizzle-adapter@1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))':
     dependencies:
       '@better-auth/core': 1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5)
       '@better-auth/utils': 0.5.0
     optionalDependencies:
-      drizzle-orm: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)
+      drizzle-orm: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)
 
   '@better-auth/kysely-adapter@1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(kysely@0.29.7)':
     dependencies:
@@ -4523,6 +4603,24 @@ snapshots:
       '@modelcontextprotocol/core': 2.4.0
       zod: 4.6.7
 
+  '@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.4':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-darwin-x64@3.0.4':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.4':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm@3.0.4':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-linux-x64@3.0.4':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.4':
+    optional: true
+
   '@next/swc-darwin-arm64@16.4.3':
     optional: true
 
@@ -4562,6 +4660,24 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.3
+
+  '@opencode/client@2.0.24(effect@4.0.0-rc.112)(solid-js@1.9.18)':
+    dependencies:
+      '@opencode/protocol': 2.0.24
+      '@opencode/schema': 2.0.24
+    optionalDependencies:
+      effect: 4.0.0-rc.112
+      solid-js: 1.9.18
+
+  '@opencode/protocol@2.0.24':
+    dependencies:
+      '@opencode/schema': 2.0.24
+      effect: 4.0.0-rc.112
+
+  '@opencode/schema@2.0.24':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      effect: 4.0.0-rc.112
 
   '@openrouter/ai-sdk-provider@3.1.0(ai@7.0.159(zod@4.6.7))(zod@4.6.7)':
     dependencies:
@@ -5186,6 +5302,16 @@ snapshots:
 
   '@yuku-toolchain/types@0.19.0': {}
 
+  ai-sdk-provider-opencode-sdk@5.0.1(effect@4.0.0-rc.112)(solid-js@1.9.18)(zod@4.6.7):
+    dependencies:
+      '@ai-sdk/provider': 4.0.35
+      '@ai-sdk/provider-utils': 5.0.72(zod@4.6.7)
+      '@opencode/client': 2.0.24(effect@4.0.0-rc.112)(solid-js@1.9.18)
+      zod: 4.6.7
+    transitivePeerDependencies:
+      - effect
+      - solid-js
+
   ai@7.0.159(zod@4.6.7):
     dependencies:
       '@ai-sdk/gateway': 4.0.132(zod@4.6.7)
@@ -5228,10 +5354,10 @@ snapshots:
 
   baseline-browser-mapping@2.11.34: {}
 
-  better-auth@1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0))):
+  better-auth@1.7.12(drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)))(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0))(pg@8.23.1)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(solid-js@1.9.18)(vitest@5.0.5(@types/node@26.6.6)(vite@8.3.5(@types/node@26.6.6)(jiti@2.7.0))):
     dependencies:
       '@better-auth/core': 1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5)
-      '@better-auth/drizzle-adapter': 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))
+      '@better-auth/drizzle-adapter': 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))
       '@better-auth/kysely-adapter': 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)(kysely@0.29.7)
       '@better-auth/memory-adapter': 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)
       '@better-auth/mongo-adapter': 1.7.12(@better-auth/core@1.7.12(@better-auth/utils@0.5.0)(@better-fetch/fetch@1.3.2)(better-call@1.4.4(zod@4.6.7))(jose@6.2.14)(kysely@0.29.7)(nanostores@1.5.5))(@better-auth/utils@0.5.0)
@@ -5248,8 +5374,8 @@ snapshots:
       nanostores: 1.5.5
       zod: 4.6.7
     optionalDependencies:
-      drizzle-kit: 1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7))
-      drizzle-orm: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)
+      drizzle-kit: 1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7))
+      drizzle-orm: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)
       next: 16.4.3(@babel/core@7.29.7)(@types/node@26.6.6)(babel-plugin-react-compiler@1.0.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(varlock@1.23.0)
       pg: 8.23.1
       react: 19.3.1
@@ -5411,19 +5537,25 @@ snapshots:
 
   dotenv@17.4.2: {}
 
-  drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)):
+  drizzle-kit@1.0.0-rc.5(drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)):
     optionalDependencies:
-      drizzle-orm: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7)
+      drizzle-orm: 1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7)
 
-  drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(pg@8.23.1)(zod@4.6.7):
+  drizzle-orm@1.0.0-rc.5(@sinclair/typebox@0.34.52)(@types/pg@8.23.1)(bun-types@1.4.4)(effect@4.0.0-rc.112)(pg@8.23.1)(zod@4.6.7):
     optionalDependencies:
       '@sinclair/typebox': 0.34.52
       '@types/pg': 8.23.1
       bun-types: 1.4.4
+      effect: 4.0.0-rc.112
       pg: 8.23.1
       zod: 4.6.7
 
   dts-resolver@3.0.0: {}
+
+  effect@4.0.0-rc.112:
+    dependencies:
+      fast-check: 4.10.2
+      msgpackr: 2.1.3
 
   electron-to-chromium@1.5.470: {}
 
@@ -5506,6 +5638,10 @@ snapshots:
   expect-type@1.4.0: {}
 
   extend@3.0.2: {}
+
+  fast-check@4.10.2:
+    dependencies:
+      pure-rand: 8.4.2
 
   fast-decode-uri-component@1.0.1: {}
 
@@ -6287,6 +6423,22 @@ snapshots:
 
   ms@2.1.3: {}
 
+  msgpackr-extract@3.0.4:
+    dependencies:
+      node-gyp-build-optional-packages: 5.2.2
+    optionalDependencies:
+      '@msgpackr-extract/msgpackr-extract-darwin-arm64': 3.0.4
+      '@msgpackr-extract/msgpackr-extract-darwin-x64': 3.0.4
+      '@msgpackr-extract/msgpackr-extract-linux-arm': 3.0.4
+      '@msgpackr-extract/msgpackr-extract-linux-arm64': 3.0.4
+      '@msgpackr-extract/msgpackr-extract-linux-x64': 3.0.4
+      '@msgpackr-extract/msgpackr-extract-win32-x64': 3.0.4
+    optional: true
+
+  msgpackr@2.1.3:
+    optionalDependencies:
+      msgpackr-extract: 3.0.4
+
   nanoid@3.3.20: {}
 
   nanostores@1.5.5: {}
@@ -6322,6 +6474,11 @@ snapshots:
       - '@types/node'
       - babel-plugin-macros
       - varlock
+
+  node-gyp-build-optional-packages@5.2.2:
+    dependencies:
+      detect-libc: 2.1.2
+    optional: true
 
   node-releases@2.0.62: {}
 
@@ -6495,6 +6652,8 @@ snapshots:
       sisteransi: 1.0.5
 
   property-information@7.2.0: {}
+
+  pure-rand@8.4.2: {}
 
   quansync@1.0.0: {}
 

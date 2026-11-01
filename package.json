@@ -23,7 +23,8 @@
 		"env:generate": "varlock codegen --path ./apps/web/ && varlock codegen --path ./apps/server/ && varlock codegen --path ./packages/db/",
 		"postinstall": "varlock codegen --path ./apps/web/ && varlock codegen --path ./apps/server/ && varlock codegen --path ./packages/db/",
 		"auth:generate": "cd apps/server && pnpm run auth:generate",
-		"check": "biome check --write ."
+		"check": "biome check --write .",
+		"polish": "bun scripts/polish.ts"
 	},
 	"dependencies": {
 		"zod": "catalog:"

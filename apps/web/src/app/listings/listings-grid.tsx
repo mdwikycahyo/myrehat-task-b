@@ -41,11 +41,6 @@ const dateFormat = new Intl.DateTimeFormat("id-ID", { dateStyle: "medium" });
 
 const GRID = "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3";
 
-/** wa.me expects international digits only: 08… / +628… → 628… */
-function toWaMeNumber(raw: string) {
-	return raw.replace(/\D/g, "").replace(/^0/, "62");
-}
-
 export default function ListingsGrid() {
 	const listings = useQuery(orpc.listing.list.queryOptions());
 
@@ -122,7 +117,7 @@ export default function ListingsGrid() {
 								{dateFormat.format(new Date(item.createdAt))}
 							</time>
 							<a
-								href={`https://wa.me/${toWaMeNumber(item.whatsapp)}`}
+								href={`https://wa.me/${item.whatsapp}`}
 								target="_blank"
 								rel="noopener noreferrer"
 								className={cn(buttonVariants({ size: "lg" }))}

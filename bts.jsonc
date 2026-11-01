@@ -1,0 +1,28 @@
+// Better-T-Stack project metadata
+//
+// Keep this file to use the `add` command.
+// Add addons: pnpm dlx create-better-t-stack@latest add
+//
+// Docs: https://better-t-stack.dev/docs
+// Stack Builder: https://better-t-stack.dev/new
+
+{
+  "$schema": "https://r2.better-t-stack.dev/schema.json",
+  "version": "3.49.0",
+  "createdAt": "2026-10-31T23:16:10.021Z",
+  "reproducibleCommand": "pnpm create better-t-stack@latest myrehat-task-b --frontend next --backend elysia --runtime bun --database postgres --orm drizzle --api orpc --auth better-auth --payments none --addons turborepo biome --examples ai --db-setup none --web-deploy docker --server-deploy docker --no-git --package-manager pnpm --no-install",
+  "database": "postgres",
+  "orm": "drizzle",
+  "backend": "elysia",
+  "runtime": "bun",
+  "frontend": ["next"],
+  "addons": ["turborepo", "biome"],
+  "examples": ["ai"],
+  "auth": "better-auth",
+  "payments": "none",
+  "packageManager": "pnpm",
+  "dbSetup": "none",
+  "api": "orpc",
+  "webDeploy": "docker",
+  "serverDeploy": "docker",
+}

@@ -1,0 +1,3 @@
+{
+  "extends": "@myrehat-task-b/config/tsconfig.base.json"
+}

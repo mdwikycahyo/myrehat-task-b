@@ -1,0 +1,25 @@
+{
+  "name": "@myrehat-task-b/api",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "check-types": "tsc -b"
+  },
+  "dependencies": {
+    "@myrehat-task-b/auth": "workspace:*",
+    "@myrehat-task-b/db": "workspace:*",
+    "@orpc/client": "catalog:",
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/zod": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@myrehat-task-b/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

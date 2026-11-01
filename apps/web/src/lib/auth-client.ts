@@ -14,6 +14,6 @@ function getServerUrl(url: string) {
 export const authClient = createAuthClient({
 	baseURL: new URL(
 		"/api/auth",
-		getServerUrl(process.env.NEXT_PUBLIC_SERVER_URL!),
+		getServerUrl(process.env.NEXT_PUBLIC_SERVER_URL as string),
 	).toString(),
 });

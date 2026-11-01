@@ -4,22 +4,22 @@ Date: 2026-11-01. Local checkout, no push. Commits since scaffold `e7d33fe`: A1�
 
 ## Commands and results
 
-| Command | Exit | Result |
-| --- | --- | --- |
-| `pnpm install --frozen-lockfile` | 0 | Lockfile up to date, nothing installed |
-| `pnpm check-types` | 0 | 6/6 turbo tasks successful (auth, db, api, ui, server, web) |
-| `bunx vitest run` | 0 | 2 files, 23/23 tests passed |
-| `bunx biome check --max-diagnostics=1000` | 1 | 9 errors, 4 warnings remain (baseline before F1: 92 errors, 69 warnings) |
-| `shasum -c .amp/in/deployment-baseline.sha` | 0 | all six protected files `OK` |
+| Command                                     | Exit | Result                                                                   |
+| ------------------------------------------- | ---- | ------------------------------------------------------------------------ |
+| `pnpm install --frozen-lockfile`            | 0    | Lockfile up to date, nothing installed                                   |
+| `pnpm check-types`                          | 0    | 6/6 turbo tasks successful (auth, db, api, ui, server, web)              |
+| `bunx vitest run`                           | 0    | 2 files, 23/23 tests passed                                              |
+| `bunx biome check --max-diagnostics=1000`   | 1    | 9 errors, 4 warnings remain (baseline before F1: 92 errors, 69 warnings) |
+| `shasum -c .amp/in/deployment-baseline.sha` | 0    | all six protected files `OK`                                             |
 
 Outputs kept in `.amp/in/` (`typecheck.txt`, `vitest.txt`, `biome-final.txt`).
 
-## Remaining Biome findings (not hidden, nothing suppressed)
+## Remaining Biome findings (nothing suppressed)
 
-- Protected, left byte-identical: `apps/web/next.config.ts` (format), `packages/auth/src/index.ts` (format).
-- Home hero `apps/web/src/app/page.tsx` (format + Tailwind class order): not touched (F4).
-- Scaffold code needing behaviour changes, not F1: `noNonNullAssertion` in `apps/web/src/lib/auth-client.ts` and `apps/web/src/utils/orpc.ts`; unused `session` prop in `dashboard.tsx`; four a11y rules in the shadcn `packages/ui` `input-group.tsx` / `label.tsx`.
-- `apps/web/src/env.ts`, `apps/server/src/env.ts`: varlock-generated and gitignored; Biome format complaints only.
+Final `bunx biome check --max-diagnostics=1000`: exit 1, **2 errors**, 0 warnings, 0 infos (baseline before F1: 92 errors, 69 warnings).
+
+- `apps/web/next.config.ts` format and `packages/auth/src/index.ts` format: protected deployment files kept byte-identical, so these two formatter conflicts remain.
+- Generated, gitignored `env.ts` files (`apps/web`, `apps/server`, `packages/db`) were formatted locally and are not committed. `pnpm run env:generate` (also run by `postinstall`) rewrites them unformatted, so Biome reports a format error for them again right after regeneration; the generator was not changed.
 
 ## Checks
 
@@ -32,7 +32,7 @@ Outputs kept in `.amp/in/` (`typecheck.txt`, `vitest.txt`, `biome-final.txt`).
 ## Smoke test
 
 - Real HTTP, no DB: `bun run src/index.ts` in `apps/server`, then `POST http://localhost:3000/rpc/listing/create` with valid body and no cookie → **HTTP 401** `{"code":"UNAUTHORIZED"}`. Server was stopped afterwards.
-- **Not run (no database):** `db:push`, sign-up, authenticated create, persistence, and real `listing.list`. Docker daemon is not running, nothing listens on 5432, no local Postgres binaries, and `DATABASE_URL` is `placeholder`. `listing.list` against the placeholder URL hangs. Persistence is therefore unproven; all authenticated browser flows used mocked session/RPC responses. No remote DB was touched.
+- **Not run (no database):** `db:push`, sign-up, authenticated create and persistence. A real `listing.list` call was attempted against the server and hung (the `DATABASE_URL` is `placeholder`), so it produced no result. Docker daemon is not running, nothing listens on 5432, no local Postgres binaries, and `DATABASE_URL` is `placeholder`. Persistence is therefore unproven; all authenticated browser flows used mocked session/RPC responses. No remote DB was touched.
 
 ## Fixes made in A6
 
@@ -41,6 +41,8 @@ Outputs kept in `.amp/in/` (`typecheck.txt`, `vitest.txt`, `biome-final.txt`).
 - `listings-grid.tsx`: dropped `toWaMeNumber`; stored numbers are already normalised `628…`.
 - Header: at 360px with a long account name, the page scrolled horizontally (scrollWidth 446 vs 360). `user-menu.tsx` trigger now truncates (`max-w-28 sm:max-w-56`); scrollWidth is 360 afterwards.
 
+- Follow-up Biome fixes: `InputGroup`/`InputGroupAddon` are now `<fieldset>` (no visual change: 448×32 desktop, 296×32 at 360px, no border), addon focus-forwarding moved from `onClick` to `onMouseDown` with `preventDefault` (focus lands on the input), `Label` passes `htmlFor`/`children` explicitly. Browser check of the form: every label click focuses its control, clicking the `Rp` addon focuses price, tab order price→location→category→whatsapp→submit, no horizontal overflow. Home `page.tsx` received formatter and class-order changes only (`git diff -w`: one class reorder). Removed unused `session` prop from `Dashboard`; `process.env.NEXT_PUBLIC_SERVER_URL!` became `as string` (same runtime).
+
 ## Screenshots (`.amp/in/artifacts/final-*.png`)
 
-Mocked session and RPC, TanStack devtools and Next indicator hidden. Long account name used. `final-{list,form}-{desktop,360}-{light,dark}.png`, `final-form-errors-{desktop,360}-{light,dark}.png`, `final-empty-loggedout-*`, `final-error-*`, `final-form-loggedout-*` (light). Dev server for visual checks: http://localhost:3001 (left running).
+Mocked session and RPC, TanStack devtools and Next indicator hidden. Long account name used. `final-{list,form}-{desktop,360}-{light,dark}.png`, `final-form-errors-{desktop,360}-{light,dark}.png`, `final-empty-loggedout-*`, `final-error-*`, `final-form-loggedout-*` (light). Follow-up captures: `a6b-form-focus-errors-{desktop,360}-*.png`. Dev server for visual checks: http://localhost:3001 (left running).

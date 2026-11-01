@@ -49,7 +49,7 @@ function getServerUrl(url: string) {
 }
 
 export const link = new RPCLink({
-	url: `${getServerUrl(process.env.NEXT_PUBLIC_SERVER_URL!)}/rpc`,
+	url: `${getServerUrl(process.env.NEXT_PUBLIC_SERVER_URL as string)}/rpc`,
 	fetch(url, options) {
 		return fetch(url, {
 			...options,

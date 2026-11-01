@@ -7,11 +7,10 @@ import { cn } from "@myrehat-task-b/ui/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
 
-function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
+function InputGroup({ className, ...props }: React.ComponentProps<"fieldset">) {
 	return (
-		<div
+		<fieldset
 			data-slot="input-group"
-			role="group"
 			className={cn(
 				"group/input-group border-input bg-background dark:bg-input/30 relative flex h-8 w-full min-w-0 items-center rounded-none border shadow-xs transition-[color,box-shadow] outline-none has-[>textarea]:h-auto",
 				"has-[>[data-align=inline-end]]:[&>input]:pr-2 has-[>[data-align=inline-start]]:[&>input]:pl-2",
@@ -51,17 +50,19 @@ function InputGroupAddon({
 	className,
 	align = "inline-start",
 	...props
-}: React.ComponentProps<"div"> & VariantProps<typeof inputGroupAddonVariants>) {
+}: React.ComponentProps<"fieldset"> &
+	VariantProps<typeof inputGroupAddonVariants>) {
 	return (
-		<div
-			role="group"
+		<fieldset
 			data-slot="input-group-addon"
 			data-align={align}
 			className={cn(inputGroupAddonVariants({ align }), className)}
-			onClick={(e) => {
+			onMouseDown={(e) => {
 				if ((e.target as HTMLElement).closest("button")) {
 					return;
 				}
+				// Keep focus on the control instead of letting it fall to the body.
+				e.preventDefault();
 				e.currentTarget.parentElement
 					?.querySelector<HTMLInputElement | HTMLTextAreaElement>(
 						"input, textarea",

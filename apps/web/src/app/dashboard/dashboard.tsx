@@ -12,9 +12,5 @@ export default function Dashboard({
 }) {
 	const privateData = useQuery(orpc.privateData.queryOptions());
 
-	return (
-		<>
-			<p>API: {privateData.data?.message}</p>
-		</>
-	);
+	return <p>API: {privateData.data?.message}</p>;
 }

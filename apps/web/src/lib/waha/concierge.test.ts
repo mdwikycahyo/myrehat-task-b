@@ -46,7 +46,7 @@ describe("generateConciergeReply", () => {
 		expect(call.abortSignal).toBeInstanceOf(AbortSignal);
 	});
 
-	it("returns the fallback when the model throws, without leaking secrets", async () => {
+	it("returns the fallback and logs when the model throws", async () => {
 		const spy = vi.spyOn(console, "error").mockImplementation(() => {});
 		const model = new MockLanguageModelV4({
 			doGenerate: async () => {

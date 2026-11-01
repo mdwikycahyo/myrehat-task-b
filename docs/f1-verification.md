@@ -4,13 +4,13 @@ Date: 2026-11-01. Local checkout, no push. Commits since scaffold `e7d33fe`: A1â
 
 ## Commands and results
 
-| Command                                     | Exit | Result                                                                   |
-| ------------------------------------------- | ---- | ------------------------------------------------------------------------ |
-| `pnpm install --frozen-lockfile`            | 0    | Lockfile up to date, nothing installed                                   |
-| `pnpm check-types`                          | 0    | 6/6 turbo tasks successful (auth, db, api, ui, server, web)              |
-| `bunx vitest run`                           | 0    | 2 files, 23/23 tests passed                                              |
-| `bunx biome check --max-diagnostics=1000`   | 1    | 9 errors, 4 warnings remain (baseline before F1: 92 errors, 69 warnings) |
-| `shasum -c .amp/in/deployment-baseline.sha` | 0    | all six protected files `OK`                                             |
+| Command                                     | Exit | Result                                                                             |
+| ------------------------------------------- | ---- | ---------------------------------------------------------------------------------- |
+| `pnpm install --frozen-lockfile`            | 0    | Lockfile up to date, nothing installed                                             |
+| `pnpm check-types`                          | 0    | 6/6 turbo tasks successful (auth, db, api, ui, server, web)                        |
+| `bunx vitest run`                           | 0    | 2 files, 23/23 tests passed                                                        |
+| `bunx biome check --max-diagnostics=1000`   | 1    | 2 errors remain, both protected files (baseline before F1: 92 errors, 69 warnings) |
+| `shasum -c .amp/in/deployment-baseline.sha` | 0    | all six protected files `OK`                                                       |
 
 Outputs kept in `.amp/in/` (`typecheck.txt`, `vitest.txt`, `biome-final.txt`).
 
